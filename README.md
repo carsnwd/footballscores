@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # FootballScores
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+=======
+# footballscores
+Trying to learn Angular 2+ coming from an AngularJS background.
+>>>>>>> b02839f40b64efda5a6c65f74da12a6744c428ea
