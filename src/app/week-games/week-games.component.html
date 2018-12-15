@@ -1,0 +1,7 @@
+<ul>
+  <li *ngFor="let game of currentGames">
+    <img src="{{'../../assets/' + game.homeTeam + '.png'}}"/> vs <img src="{{'../../assets/' + game.awayTeam + '.png'}}"/><br>
+    Score: {{game.homeScore}}  {{game.awayScore}}<br>
+    Quarter: {{game.quarter}}<br>
+  </li>
+</ul>
