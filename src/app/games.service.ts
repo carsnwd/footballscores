@@ -39,6 +39,25 @@ export class GamesService {
   }
 
   /**
+   * @method getCurrentWeek
+   * @returns An observable that returns the current week.
+   */
+  public getCurrentWeek(): Observable<any>{
+    const currentWeekObservable = new Observable(observer =>{
+      this.http.get('http://www.nfl.com/liveupdate/scorestrip/ss.json')
+      .subscribe((data) => {
+        observer.next(_.get(data, 'w'));
+      }, (error) => {
+        observer.error((err) => {
+          console.error('Recieved error: ' + err);
+        });
+      });
+    });
+
+    return currentWeekObservable;
+  }
+
+  /**
    * @method parseGames
    * @param data - JSON Data from the NFL Live Update API.
    * @returns - Array of Game objects for each game.

@@ -1,7 +1,36 @@
+<h1>Week {{currentWeek}} NFL Games</h1>
 <ul>
   <li *ngFor="let game of currentGames">
-    <img src="{{'../../assets/' + game.homeTeam + '.png'}}"/> vs <img src="{{'../../assets/' + game.awayTeam + '.png'}}"/><br>
-    Score: {{game.homeScore}}  {{game.awayScore}}<br>
-    Quarter: {{game.quarter}}<br>
+    <div class="container">
+      <div class="row">
+          <div class="col-sm">
+              <img src="{{'../../assets/' + game.homeTeam + '.png'}}"/>
+          </div> 
+          <div class="col-sm teamText">
+              {{game.homeTeam}}
+          </div>
+          <div class="col-sm teamText">
+              {{game.homeScore}}
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm">
+              <img src="{{'../../assets/' + game.awayTeam + '.png'}}"/>
+          </div> 
+          <div class="col-sm teamText">
+              {{game.awayTeam}}
+          </div>
+          <div class="col-sm teamText">
+              {{game.awayScore}}
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-sm">
+            <span class="quarterText"> {{game.quarter}} </span>
+        </div>
+        <div class="col-sm"></div>
+      </div>
+    </div>
   </li>
 </ul>

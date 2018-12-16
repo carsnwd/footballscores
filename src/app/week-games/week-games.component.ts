@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GamesService } from '../games.service';
-import { Observable } from '../../../node_modules/rxjs';
+import { Game } from '../models/game';
 
 @Component({
   selector: 'app-week-games',
@@ -8,7 +8,8 @@ import { Observable } from '../../../node_modules/rxjs';
   styleUrls: ['./week-games.component.less']
 })
 export class WeekGamesComponent implements OnInit {
-  currentGames: any;
+  currentGames: Game[];
+  currentWeek: String;
 
   constructor(private gamesService: GamesService) {
   }
@@ -16,6 +17,9 @@ export class WeekGamesComponent implements OnInit {
   ngOnInit() {
     this.gamesService.getCurrentGames().subscribe((data) => {
       this.currentGames = data;
+    });
+    this.gamesService.getCurrentWeek().subscribe((data) => {
+      this.currentWeek = data;
     });
   }
 
