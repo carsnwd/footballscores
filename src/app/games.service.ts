@@ -30,7 +30,7 @@ export class GamesService {
       .subscribe((data) => {
         observer.next(this.parseGames(data));
       }, (error) => {
-        observer.error((err) => {console.error('Recieved error: ' + err);
+        observer.error((err) => {console.error(err);
         });
       });
     });
@@ -43,13 +43,13 @@ export class GamesService {
    * @returns An observable that returns the current week.
    */
   public getCurrentWeek(): Observable<any>{
-    const currentWeekObservable = new Observable(observer =>{
+    const currentWeekObservable = new Observable(observer => {
       this.http.get('http://www.nfl.com/liveupdate/scorestrip/ss.json')
       .subscribe((data) => {
         observer.next(_.get(data, 'w'));
       }, (error) => {
         observer.error((err) => {
-          console.error('Recieved error: ' + err);
+          console.error(err);
         });
       });
     });
